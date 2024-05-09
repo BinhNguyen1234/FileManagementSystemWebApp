@@ -27,9 +27,8 @@ const configCommon = {
             {
                 test: /\.(?:js|jsx|tsx|ts)$/i,
                 exclude: ['/node_modules/'],
-                use: {
-                    loader: "babel-loader"
-                }
+                use: ["babel-loader", "ts-loader"]
+                
             }
         ],
     },

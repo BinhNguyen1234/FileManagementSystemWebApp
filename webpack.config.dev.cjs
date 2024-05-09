@@ -3,7 +3,8 @@
 const mergeResolver = require("webpack-merge")
 const configCommon = require("./webpack.config.common.cjs")
 const configDevelopment = {
-    mode: "development"
+    mode: "development",
+
 };
 
 const config = mergeResolver.merge(configCommon,configDevelopment);

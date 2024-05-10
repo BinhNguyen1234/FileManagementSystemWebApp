@@ -1,8 +1,9 @@
-/* eslint-disable no-undef */
+
 // Generated using webpack-cli https://github.com/webpack/webpack-cli
 const path = require("path");
 const webpack = require("webpack")
 const HtmlWebpackPlugin = require("html-webpack-plugin")
+const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin'); // auto sync tsconfig to webpackconfig 
 const configCommon = {
     entry: "./src/index.tsx",
     output: {
@@ -18,6 +19,12 @@ const configCommon = {
             filename: 'index.html'
         })
     ],
+    devServer:{
+        static: {
+            directory: path.join(__dirname, 'public'),
+            publicPath: '/demo'
+        },
+    },
     module: {
         rules: [
             {
@@ -27,17 +34,14 @@ const configCommon = {
             {
                 test: /\.(?:js|jsx|tsx|ts)$/i,
                 exclude: ['/node_modules/'],
-                use: {
-                    loader: "babel-loader"
-                }
+                use: ["babel-loader", "ts-loader"]
+                
             }
         ],
     },
     resolve:{
         extensions: ['.tsx', '.ts', '.jsx', '.js'],
-        alias: {
-            '@': path.resolve(__dirname, 'src')
-        }
+        plugins: [new TsconfigPathsPlugin()]
     }
 };
 

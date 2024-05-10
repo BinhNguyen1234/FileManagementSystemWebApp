@@ -8,6 +8,7 @@
     "build": "webpack --node-env=production --config webpack.config.prod.cjs",
     "build:dev": "webpack  --node-env=development  --config webpack.config.dev.cjs",
     "dev": "webpack serve --node-env=development --config webpack.config.dev.cjs",
+    "demo": "webpack serve --node-env=production --static .\\public --static-public-path /demo  --open /demo --config webpack.config.common.cjs",
     "watch": "webpack --watch",
     "lint": "eslint"
   },

@@ -19,6 +19,12 @@ const configCommon = {
             filename: 'index.html'
         })
     ],
+    devServer:{
+        static: {
+            directory: path.join(__dirname, 'public'),
+            publicPath: '/demo'
+        },
+    },
     module: {
         rules: [
             {

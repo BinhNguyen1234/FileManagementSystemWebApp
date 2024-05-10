@@ -11,11 +11,13 @@ export default [
         },
         languageOptions: {
             globals: {
-                ...globals.browser
+                ...globals.globals
             }
         },
-        ignorePattern: [
-            "/dist/*"
+        ignores: [
+            "**/dist/*",
+            "**/public/*",
+            "**/webpack.config.*"
         ]
     },
 ];

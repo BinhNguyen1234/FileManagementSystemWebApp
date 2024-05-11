@@ -18,6 +18,7 @@ on:
 jobs:
   check-eslint:
     runs-on: ubuntu-latest
+    name: build and publish
     steps:
       - name: Check eslint
         run: echo "Hello 

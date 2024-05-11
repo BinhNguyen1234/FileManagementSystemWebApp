@@ -10,7 +10,7 @@ on:
         - dev
         - todo/*
   pull_request:
-        branches: 
+      branches: 
         - dev
         - todo/*
 

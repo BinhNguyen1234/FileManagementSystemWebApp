@@ -21,5 +21,5 @@ jobs:
     name: build and publish
     steps:
       - name: Check eslint
-        run: echo "Hello 
+        run: echo "Hello world"
   # This workflow contains a single job called "greet"

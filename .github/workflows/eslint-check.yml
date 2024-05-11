@@ -22,7 +22,7 @@ jobs:
     name: Eslint checking
     defaults:
       run:
-        working-directory: ./FileManagementSystemWebApp
+        working-directory: ""
     strategy:
       matrix:
         node-version: ['20.x']

@@ -1,0 +1,24 @@
+# This is a basic workflow that is manually triggered
+
+name: Trigger eslint when merge
+
+# Controls when the action will run. Workflow runs when manually triggered using the UI
+# or API.
+on:
+  push:
+      branches: 
+        - dev
+        - todo/*
+  pull_request:
+      branches: 
+        - dev
+        - todo/*
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  check-eslint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check eslint
+        run: echo "Hello 
+  # This workflow contains a single job called "greet"

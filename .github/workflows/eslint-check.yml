@@ -8,9 +8,11 @@ on:
   push:
       branches: 
         - dev
+        - todo/1
         - todo/*
   pull_request:
       branches: 
+        - todo/1
         - dev
         - todo/*
 

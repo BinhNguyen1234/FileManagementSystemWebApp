@@ -5,21 +5,20 @@ name: Trigger eslint when merge
 # Controls when the action will run. Workflow runs when manually triggered using the UI
 # or API.
 on:
-  workflow_dispatch:
-    # Inputs the workflow accepts.
-    inputs:
-      name:
-        # Friendly description to be shown in the UI instead of 'name'
-        description: 'Person to greet'
-        # Default value if no value is explicitly provided
-        default: 'World'
-        # Input has to be provided for the workflow to run
-        required: true
-        # The data type of the input
-        type: string
+  push:
+      branches: 
+      - todo/*
+  pull_request:
+      branches:
+      - dev
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
+  check-eslint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check eslint
+        run: npm run lint
   # This workflow contains a single job called "greet"
   greet:
     # The type of runner that the job will run on

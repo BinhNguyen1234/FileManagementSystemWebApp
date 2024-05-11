@@ -19,8 +19,8 @@ on:
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   check-eslint:
-    name: build and publish
     runs-on: ubuntu-latest
+    name: build and publish
     steps:
       - name: Check eslint
         run: echo "Hello 

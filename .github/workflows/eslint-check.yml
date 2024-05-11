@@ -15,13 +15,19 @@ on:
         - main
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
+
 jobs:
   check-eslint:
     runs-on: ubuntu-latest
-    name: es-lint check
+    name: Eslint checking
+    strategy:
+      matrix:
+        node-version: ['20.13.0', '20.13.1']
     steps:
-      - name: Use Node.js 20.13.1
+      - name: Install Node.js runtime ${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
-          node-version: 20.13.1
+          node-version: ${{ matrix.node-version }}
+      - name: Install Node package
+        run: npm install
   # This workflow contains a single job called "greet"

@@ -31,5 +31,6 @@ jobs:
       - name: Install Node package
         run: |
           cd ..
+          ls
           npm install
   # This workflow contains a single job called "greet"

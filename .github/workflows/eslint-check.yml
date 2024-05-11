@@ -12,14 +12,16 @@ on:
   pull_request:
       branches: 
         - dev
-        - todo/*
+        - main
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   check-eslint:
     runs-on: ubuntu-latest
-    name: build and publish
+    name: es-lint check
     steps:
-      - name: Check eslint
-        run: echo "Hello world"
+      - name: Use Node.js 20.13.1
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20.13.1
   # This workflow contains a single job called "greet"

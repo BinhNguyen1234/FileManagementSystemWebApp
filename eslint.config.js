@@ -1,12 +1,10 @@
 import globals from "globals"
 import babelEslintParser from "@babel/eslint-parser"
 import esLintReactPlugin from "eslint-plugin-react"
-import typeScriptEslintParser from "@typescript-eslint/parser"
 export default [
     {
         plugins: {
-            esLintReactPlugin: esLintReactPlugin,
-            typeScriptEslintParser: typeScriptEslintParser
+            react: esLintReactPlugin,
         },
         files: ["**/*.ts", "**/*.tsx", "**/*.js","**/*.jsx"],
         rules: {
@@ -15,6 +13,8 @@ export default [
             "quotes": [2, "double", { "avoidEscape": true, "allowTemplateLiterals": true }],
             "no-unused-vars": "error",
             "indent": [2, 4],
+            "react/jsx-uses-react": "error",
+            "react/jsx-uses-vars": "error",
         },
         languageOptions: {
             parser: babelEslintParser,

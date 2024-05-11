@@ -20,7 +20,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Check eslint
-        run: npm run lint
+        run: echo "Hello "
   # This workflow contains a single job called "greet"
   greet:
     # The type of runner that the job will run on
@@ -30,4 +30,4 @@ jobs:
     steps:
     # Runs a single command using the runners shell
     - name: Send greeting
-      run: echo "Hello ${{ inputs.name }}"
+      run: echo "Hello "

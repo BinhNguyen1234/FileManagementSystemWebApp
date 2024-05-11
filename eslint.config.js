@@ -1,7 +1,14 @@
 import globals from "globals"
-
+import babelEslintParser from "@babel/eslint-parser"
+import esLintReactPlugin from "eslint-plugin-react"
+import typeScriptEslintParser from "@typescript-eslint/parser"
 export default [
     {
+        plugins: {
+            esLintReactPlugin: esLintReactPlugin,
+            typeScriptEslintParser: typeScriptEslintParser
+        },
+        files: ["**/*.ts", "**/*.tsx", "**/*.js","**/*.jsx"],
         rules: {
             "no-unused-vars": "warn",
             "no-undef": "warn",
@@ -10,14 +17,11 @@ export default [
             "indent": [2, 4],
         },
         languageOptions: {
-            globals: {
-                ...globals.globals
-            }
+            parser: babelEslintParser,
+            globals: {...globals.node}
         },
         ignores: [
-            "**/dist/*",
-            "**/public/*",
-            "**/webpack.config.*"
+            "public/**",
         ]
     },
 ];

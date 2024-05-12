@@ -1,6 +1,5 @@
 
 import tseslint from "typescript-eslint"
-import esLintReact from "eslint-plugin-react"
 import globals from "globals"
 
 export default tseslint.config({
@@ -9,7 +8,6 @@ export default tseslint.config({
         ...tseslint.configs.recommended,
     ],
     plugins: {
-        react: esLintReact
     },
     rules: {
         "no-undef": "warn",

@@ -1,6 +1,6 @@
 
-export default function App(){
+export default function App() {
     console.log(12312312)
     return <div> Hello World</div>
 }
-console.log("Binh  fadsfasfffff ")
+console.log("Binh  fadsfasfffff")

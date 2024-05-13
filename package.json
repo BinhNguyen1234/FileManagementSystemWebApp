@@ -10,7 +10,7 @@
     "dev": "webpack serve --node-env=development --config webpack.config.dev.cjs",
     "demo-product-mode": "webpack serve --node-env=production --static .\\public --static-public-path /demo  --open /demo --config webpack.config.common.cjs",
     "watch": "webpack --watch",
-    "lint": "eslint"
+    "lint": "eslint ."
   },
   "author": "Binh Nguyen",
   "license": "MIT",
@@ -27,6 +27,7 @@
     "@babel/preset-react": "^7.24.1",
     "@babel/preset-typescript": "^7.24.1",
     "@eslint/js": "^9.2.0",
+    "@stylistic/eslint-plugin-js": "^2.1.0",
     "@webpack-cli/generators": "^3.0.7",
     "babel-loader": "^9.1.3",
     "eslint": "^8.0.0",

@@ -1,17 +1,16 @@
 
 import tseslint from "typescript-eslint"
 import globals from "globals"
+import stylisticJs from '@stylistic/eslint-plugin-js'
 
 export default tseslint.config({
     files: ["**/*.ts", "**/*.tsx", "**/*.js","**/*.jsx"],
-    extends: [
-        ...tseslint.configs.recommended,
-    ],
     plugins: {
+        '@stylistic/js': stylisticJs
     },
     rules: {
         "no-undef": "warn",
-        "quotes": [2, "double", { "avoidEscape": true, "allowTemplateLiterals": true }],
+        "@stylistic/js/quotes": [2, "double", { "avoidEscape": true, "allowTemplateLiterals": true }],
         "no-unused-vars": "error",
         "indent": [2, 4],
     },
@@ -22,7 +21,6 @@ export default tseslint.config({
         parserOptions: {
             ecmaFeatures: {
                 jsx: true,
-                
             },
         },
         

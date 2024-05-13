@@ -22,13 +22,13 @@ jobs:
       matrix:
         node-version: ['20.x.x']
     steps:
-      - name: Sync source code
+      - name: Sync - pull source code
         uses: actions/checkout@v4
-      - name: Install Node.js runtime ${{ matrix.node-version }}
+      - name: Set up Node.js runtime ${{ matrix.node-version }}
         uses: actions/setup-node@v4
         with:
           node-version: ${{ matrix.node-version }}
-      - name: Install Node package
+      - name: Install node package
         run: npm ci
       - name: Checking lint
         run: npm run lint

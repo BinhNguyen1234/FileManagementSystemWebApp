@@ -1,10 +1,14 @@
 import reactEsLintRecommend from "eslint-plugin-react/configs/recommended.js";
+import js from "@eslint/js";
 import globals from "globals";
 import stylisticJs from "@stylistic/eslint-plugin-js";
 
 export default [
     {
         ...reactEsLintRecommend,
+    },
+    {
+        ...js.configs.recommended
     },
     {
         files: ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx"],
@@ -19,7 +23,8 @@ export default [
                 { avoidEscape: true, allowTemplateLiterals: true },
             ],
             "no-unused-vars": "error",
-            indent: [2, 4],
+            "comma-style": ["error", "last"],
+            "indent": [2, 4],
         },
         languageOptions: {
             parserOptions: {
@@ -46,11 +51,14 @@ export default [
         },
     },
     { 
-        ignores: ["public/**"],
-    },
+        ignores: [
+            "public/**",
+            "webpack.config.**"
+        ],
+    }, 
     {
-        rules: {
-            "react/jsx-no-undef": ["error", { "allowGlobals": true }]
+        rules : {
+            "react/jsx-no-undef": ["error", { "allowGlobals": true }],
         }
     }
 ];

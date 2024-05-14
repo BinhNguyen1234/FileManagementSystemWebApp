@@ -10,7 +10,8 @@
     "dev": "webpack serve --node-env=development --config webpack.config.dev.cjs",
     "demo-product-mode": "webpack serve --node-env=production --static .\\public --static-public-path /demo  --open /demo --config webpack.config.common.cjs",
     "watch": "webpack --watch",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "public": "docker build -t react-docker:latest"
   },
   "author": "Binh Nguyen",
   "license": "MIT",

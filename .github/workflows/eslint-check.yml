@@ -1,27 +1,35 @@
 # This is a basic workflow that is manually triggered
 
-name: Trigger eslint when merge
+name: Trigger eslint when push
 
 # Controls when the action will run. Workflow runs when manually triggered using the UI
 # or API.
 on:
   push:
       branches: 
-        - dev
-        - todo/1
         - todo/*
   pull_request:
       branches: 
-        - todo/1
         - dev
-        - todo/*
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
+
 jobs:
   check-eslint:
     runs-on: ubuntu-latest
-    name: build and publish
+    name: Eslint checking
+    strategy:
+      matrix:
+        node-version: ['20.x.x']
     steps:
-      - name: Check eslint
-        run: echo "Hello world"
+      - name: Sync - pull source code
+        uses: actions/checkout@v4
+      - name: Set up Node.js runtime ${{ matrix.node-version }}
+        uses: actions/setup-node@v4
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install node package
+        run: npm ci
+      - name: Checking lint
+        run: npm run lint
   # This workflow contains a single job called "greet"

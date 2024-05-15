@@ -1,6 +1,8 @@
 
-export default function App(){
+export default function App() {
     console.log(12312312)
     return <div> Hello World</div>
 }
-console.log("Binh Test 1232fasfasffsffa13fff123123")
+const ff = [6 ,7];
+
+console.log("Binh  fadsfasfffff", ff);

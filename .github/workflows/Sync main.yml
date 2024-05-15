@@ -1,0 +1,31 @@
+name: Update Test Branch
+
+on:
+  pull_request:
+    branches: [main]
+  merge_group:
+    types: [checks_requested]
+
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+      - name: Setup Git User
+        run: |
+          git config user.name "GitHub Action"
+          git config user.email "binh.ngv.dev@gmail.com"
+      
+
+      - name: Update Dev Branch
+        run: |
+          git checkout main
+          git fetch origin
+          git checkout dev
+          git pull
+          git merge origin/main
+          git push origin dev
